@@ -7,7 +7,7 @@ public class Main {
 		  CFRExtract extract=new CFRExtract();
 		  
 		  //读取文件获得文法(重写规则)Map
-		  extract.GetMap("pd-tree-0002(新).txt","GBK");
+		  extract.GetMap("pd-tree-0002(新).txt");
 		 
     	  //根据文法左侧的字符获取所有可重写的规则
     	  System.out.println("NP: "+extract.GetRuleList("NP"));

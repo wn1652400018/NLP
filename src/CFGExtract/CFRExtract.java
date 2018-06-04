@@ -1,5 +1,6 @@
 package CFGExtract;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -120,9 +121,10 @@ public class CFRExtract {
 	/*
 	 * 生成规则库的映射表
 	 */
-    public  void  GetMap(String fileName,String enCoding) throws IOException{//������ݹ����
+    public  void  GetMap(String fileName) throws IOException{
     	  TreeNode rootNode=null;
     	  CFRExtract writer=new CFRExtract();
+    	  String enCoding=RecogCode.getCharset(fileName);
     	  ArrayList<String> strList=writer.GetString(fileName,enCoding);
     	  for(String string:strList) {
     		  ArrayList<String> st= writer.GetArrayList2(string);//括表达式生成ArrayList
