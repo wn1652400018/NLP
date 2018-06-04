@@ -120,7 +120,7 @@ public class CFRExtract {
 	/*
 	 * 得到规则的整体映射
 	 */
-    public  HashMap<String,HashMap<RewriteRule,Integer>> GetMap(String fileName,String enCoding) throws IOException{//多叉树递归遍历
+    public  void  GetMap(String fileName,String enCoding) throws IOException{//多叉树递归遍历
     	  TreeNode rootNode=null;
     	  CFRExtract writer=new CFRExtract();
     	  ArrayList<String> strList=writer.GetString(fileName,enCoding);
@@ -129,7 +129,6 @@ public class CFRExtract {
     		  rootNode= writer.getTree(st);
     		  traverseTree(rootNode);
     	  }
-          return map;
       }
       //遍历树
       public void traverseTree(TreeNode node) {
@@ -196,14 +195,5 @@ public class CFRExtract {
     			  System.out.println(rule);
     		  }
     	  }
-      }
-  public static void main(String args[]) throws IOException {
-    	  map=new CFRExtract().GetMap("pd-tree-0001.txt","GBK");
-    	  //根据查看某种类型的规则（以左侧的非终结符或者终结符为查询变量）
-    	  System.out.println(new CFRExtract().GetRuleList("NP"));
-    	  //更新文法
-    	  updateRule("NP","CC","NP","WP");
-    	  //查看规则
-    	  ShowRules();
       }
 }
