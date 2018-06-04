@@ -16,7 +16,7 @@ import java.util.Iterator;
 
 public class CFRExtract {
 	  /*
-	   * ½«À¨ºÅ±í´ïÊ½×ª»»ÎªArrayList,È¥µô×óÀ¨ºÅ£¬²¢ÔÚÖÕ½á·û×óÓÒÌí¼ÓÒ»¸öÀ¨ºÅ
+	   * é¦–å…ˆå®šä¹‰ä¸€ä¸ªé™æ€çš„åŒå±‚Map
 	   */
 	 private static HashMap<String,HashMap<RewriteRule,Integer>> map=new HashMap<String,HashMap<RewriteRule,Integer>>();
 	 
@@ -34,18 +34,18 @@ public class CFRExtract {
     			  stb.append(line2);
     			  line=in.readLine();
     			  if(line==null) {
-    				  break;//¶ÁÍêÕû¸öÎÄµµºóÌø³öÑ­»·
+    				  break;//æ–‡ä»¶è¯»å–å®Œæ¯•åè·³å‡ºå¾ªç¯
     			  }
         		  line1=new StringTokenizer(line,"/n");
         		  if(!line1.hasMoreTokens()) {
-        			break;//¶ÁÍêÒ»¿ÃÊ÷ºóÌø³öwhileÑ­»· 
+        			break;//ä¸€æ£µæ ‘è¯»å®Œåè·³å‡º
         		  }
         		  line2=line1.nextToken().toString();  
     		  }
     		  stringList.add(stb.toString());
     		  stb.delete(0,stb.length());
-    		  in.readLine();//ÉÏÒ»¾äÊÇ¿Õ°×¾ä
-    		  line=in.readLine();//µ±ÉÏÒ»¾äÊÇººÓï¾ä×Ó£¬Ö±½Ó¶ÁÈëÏÂÒ»¾ä
+    		  in.readLine();//ä¸Šä¸€è¡Œä¸ºç©º
+    		  line=in.readLine();//ä¸Šä¸€è¡Œä¸ºä¸­æ–‡å¥å­
     	  }
     	  return stringList;
 	  }
@@ -56,18 +56,18 @@ public class CFRExtract {
         	  StringTokenizer str=new StringTokenizer(stk.nextToken().toString()," ");
         	  while(str.hasMoreTokens()) {
         		  String bracket=str.nextToken().toString();
-        		  if(bracket.contains(("(")))//È¥³ı×óÀ¨ºÅ
+        		  if(bracket.contains(("(")))//å–å‡ºå·¦æ‹¬å·
         		  {
         			  bracket=bracket.substring(1,bracket.length());
         	      }
-    	    	  int count=0;//ÓÒÀ¨ºÅÊıÁ¿¶à¼ÓÒ»¸ö£¬ÒòÎªÖÕ½á·ûÉÙÁËÒ»¸öÀ¨ºÅ
-    	    	  while(bracket.endsWith(")")) {//½«ÓÒÀ¨ºÅÓëÎÄ±¾·ÖÀë
+    	    	  int count=0;//å³æ‹¬å·çš„æ•°é‡
+    	    	  while(bracket.endsWith(")")) {//å¯»æ‰¾åŒ…å«å³æ‹¬å·çš„å­—ç¬¦ä¸²
     	    		  count++;
     	    		  bracket=bracket.substring(0,bracket.length()-1);
     	    	  }
 				st.add(bracket);
 				if(count>0) {
-					count++;//ÔÚÖÕ½á·ûºó¶à¼ÓÒ»¸öÓÒÀ¨ºÅ£¬ÒÔ±ãÉú³ÉÊ÷
+					count++;//æ·»åŠ ä¸€ä¸ªå³æ‹¬å·ï¼Œæ–¹ä¾¿åç»­ä»listè½¬æ¢ä¸ºæ ‘
 				while(count>0) {
 					st.add(")");
 					count--;
@@ -78,7 +78,7 @@ public class CFRExtract {
           return st;
       }
     /*
-     * ÓÉArrayListµÃµ½Ê÷  
+     * ç”±listç”Ÿæˆæ ‘
      */
 	public TreeNode getTree(ArrayList<String> list) {
 			if (list.isEmpty()) return null;
@@ -86,9 +86,9 @@ public class CFRExtract {
 			Stack<TreeNode> words = new Stack<TreeNode>();
 			
 			int len = list.size();
-			for(int i =0 ;i<len ;i++) {//É¨Ãèlist£¬
-					if (!(list.get(i).equals(")"))) {//É¨Ãèµ½word
-						if (words.isEmpty()) {//É¨Ãèµ½µÚÒ»¸öword£¬Ìí¼Ó¸ù½Úµã
+			for(int i =0 ;i<len ;i++) {
+					if (!(list.get(i).equals(")"))) {
+						if (words.isEmpty()) {//æ— æ ¹èŠ‚ç‚¹
 							TreeNode root = new TreeNode();
 							root.setRoot(root);
 							root.setParent(null);
@@ -96,16 +96,16 @@ public class CFRExtract {
 							root.setValue(list.get(i));
 							words.push(root);
 							rootNode=root;
-						} else {//É¨Ãèµ½ºóÃæµÄword
+						} else {//æœ‰è·ŸèŠ‚ç‚¹ï¼Œåˆ™æ·»åŠ å„¿å­èŠ‚ç‚¹
 							TreeNode child = new TreeNode();
-							child.setRoot(words.peek().getRoot());//¸ù½Úµã²»±ä
+							child.setRoot(words.peek().getRoot());//æ ¹èŠ‚ç‚¹ä¸å˜
 							child.setParent(words.peek());
 							words.peek().getChildren().add(child);
 							child.setChildren(new Vector<TreeNode>());
 							child.setValue(list.get(i));
 							words.push(child);
 						}
-					} else {//É¨Ãèµ½ )
+					} else {////æ‰«æåˆ° )ï¼Œå‡ºæ ˆ
 						if( ! words.isEmpty() ) {
 							words.pop();
 						}
@@ -118,19 +118,19 @@ public class CFRExtract {
             return null;
 		}
 	/*
-	 * µÃµ½¹æÔòµÄÕûÌåÓ³Éä
+	 * ç”Ÿæˆè§„åˆ™åº“çš„æ˜ å°„è¡¨
 	 */
-    public  void  GetMap(String fileName,String enCoding) throws IOException{//¶à²æÊ÷µİ¹é±éÀú
+    public  void  GetMap(String fileName,String enCoding) throws IOException{//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¹ï¿½ï¿½ï¿½ï¿½
     	  TreeNode rootNode=null;
     	  CFRExtract writer=new CFRExtract();
     	  ArrayList<String> strList=writer.GetString(fileName,enCoding);
     	  for(String string:strList) {
-    		  ArrayList<String> st= writer.GetArrayList2(string);
-    		  rootNode= writer.getTree(st);
-    		  traverseTree(rootNode);
+    		  ArrayList<String> st= writer.GetArrayList2(string);//æ‹¬è¡¨è¾¾å¼ç”ŸæˆArrayList
+    		  rootNode= writer.getTree(st);//ArrayListç”Ÿæˆæ ‘
+    		  traverseTree(rootNode);//éå†æ ‘ï¼Œå¹¶åœ¨éå†çš„è¿‡ç¨‹ä¸­å°†å¾—åˆ°çš„æ ‘æ·»åŠ è‡³mapä¸­
     	  }
       }
-      //±éÀúÊ÷
+      //éå†æ ‘
       public void traverseTree(TreeNode node) {
     	  if(node.getChildren()==null) {
     		  return;
@@ -157,14 +157,14 @@ public class CFRExtract {
     	  
       }
       /*
-       * µÃµ½¼¯ºÏÖĞÄ³Ò»·ûºÅÖØĞ´¹æÔò
+       * æ ¹æ®æŸä¸€å·¦ä¾§çš„è§„åˆ™å¾—åˆ°å³ä¾§é‡å†™è§„åˆ™çš„é›†åˆ
        */
       public Set<RewriteRule> GetRuleList(String st){
     	  Set<RewriteRule> set=map.get(st).keySet();
     	  return set;
       }
       /*
-       * ¸üĞÂ¹æÔò¿â
+       * æ›´æ–°è§„åˆ™åº“
        */
       public static void updateRule(String ...args ) {
     	  RewriteRule rule=new RewriteRule(args);
@@ -183,11 +183,10 @@ public class CFRExtract {
 			  }
       }
       /*
-       * ²é¿´ËùÓĞµÄÖØĞ´¹æÔò 
+       *æŸ¥çœ‹æ‰€æœ‰çš„è§„åˆ™
        */
       public static void ShowRules() {
     	  Set<String> set=map.keySet();
-    	  System.out.println("Key¼¯ºÏ£º"+set);
     	  Iterator<String> itr=set.iterator();
     	  while(itr.hasNext()) {
     		  Set<RewriteRule> ruleSet=map.get(itr.next()).keySet();

@@ -78,7 +78,7 @@ public class RewriteRule {
 	@Override
 	public String toString() {
 		StringBuilder strb=new StringBuilder();
-		strb.append("ÖØÐ´¹æÔò£º" + form + " ->");
+		strb.append("é‡å†™è§„åˆ™ï¼š " + form + " ->");
 		for(String st: vector) {
 			strb.append(st);
 			strb.append(" ");

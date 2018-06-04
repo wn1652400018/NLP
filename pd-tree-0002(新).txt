@@ -1,0 +1,161 @@
+中国篮球协会在北京市通州区张家湾镇中心小学举行了小篮球发展计划暨小篮球联赛启动仪式。
+(ROOT
+  (IP
+    (NP
+      (NP (NR 中国))
+      (NP (NN 篮球) (NN 协会)))
+    (VP
+      (PP (P 在)
+        (NP
+          (NP (NR 北京市) (NR 通州区) (NR 张家湾镇))
+          (NP (NN 中心) (NN 小学))))
+      (VP (VV 举行) (AS 了)
+        (NP
+          (NP (NN 小篮球) (NN 发展) (NN 计划))
+          (CC 暨)
+          (NP (NN 小篮球) (NN 联赛) (NN 启动) (NN 仪式)))
+    (PU 。)))
+
+小篮球规则适用对象为12岁及以下的少年儿童。
+(ROOT
+  (IP
+    (NP (NN 小篮球) (NN 规则) (NN 适用) (NN 对象))
+    (VP (VC 为))
+    (NP
+      (DNP
+        (QP (CD 12)
+            (CLP (M 岁))
+            (CC 及)
+            (NP (PN 以下)))
+        (DEG 的))
+      (NP (NN 少年) (NN 儿童)))
+    (PU 。)))
+
+最终获奖的运动员将在12月20日揭晓。
+(ROOT
+  (IP
+    (NP
+      (CP
+        (IP
+          (VP
+            (ADVP (AD 最终))
+            (VP (VV 获奖))))
+        (DEC 的))
+      (NP (NN 运动员)))
+    (VP
+      (ADVP (AD 将))
+      (PP (P 在)
+        (NP (NT 12月) (NT 20日)))
+      (VP (VV 揭晓)))
+    (PU 。)))
+
+延庆赛区开始公开招募合作者。
+(ROOT
+  (IP
+    (NP
+      (NP (NR 延庆))
+      (NP (NN 赛区)))
+    (VP (VV 开始)
+      (VP
+        (ADVP (AD 公开))
+        (VP (VV 招募)
+          (NP (NN 合作者)))))
+    (PU 。)))
+
+这是该项赛事首次走出校门。
+(ROOT
+  (IP
+    (NP (PN 这))
+    (VP (VC 是)
+      (IP
+        (NP
+          (DP (DT 该)
+            (CLP (M 项)))
+          (NP (NN 赛事)))
+        (VP
+          (QP (OD 首)
+            (CLP (M 次)))
+          (VP (VV 走出)
+            (NP (NN 校门))))))
+    (PU 。)))
+
+2017年全国大学生游泳锦标赛19日在江西省赣州市拉开帷幕。
+(ROOT
+  (IP
+    (NP
+      (NP (NT 2017年))
+      (NP (NN 全国) (NN 大学生) (NN 游泳) (NN 锦标赛)))
+    (VP
+      (NP (NT 19日))
+      (PP (P 在)
+        (NP (NR 江西省) (NR 赣州市)))
+      (VP (VV 拉开)
+        (NP (NN 帷幕))))
+    (PU 。)))
+
+大洋彼岸的美国零售业正遭遇寒冬。
+(ROOT
+  (IP
+    (NP
+      (DNP
+        (NP (NN 大洋) (NN 彼岸))
+        (DEG 的))
+      (NP (NR 美国))
+      (NP (NN 零售业)))
+    (VP
+      (ADVP (AD 正))
+      (VP (VV 遭遇)
+        (NP (NN 寒冬))))
+    (PU 。)))
+
+麦菲特斯带记者参观Stadium Goods纽约店的地下仓库。
+(ROOT
+  (IP
+    (NP (NR 麦菲特斯))
+    (VP (V 带))
+    (NP (NN 记者))
+    (VP (VV 参观)
+      (NP
+        (DNP
+          (NP
+            (NP (NR Stadium) (NR Goods) (NR 纽约))
+            (NP (NN 店)))
+          (DEG 的))
+        (ADJP (JJ 地下))
+        (NP (NN 仓库))))
+    (PU 。)))
+
+伊冯娜·叶不再随身带太多东西。
+(ROOT
+  (IP
+    (NP (NR 伊) (NR 冯娜·叶))
+    (VP
+      (ADVP (AD 不再)(AD 随身))
+      (VP (VV 带)
+        (NP
+          (QP
+            (ADVP (AD 太))
+            (QP (CD 多)))
+          (NP (NN 东西)))))
+    (PU 。)))
+
+“新零售”为国际商业和服务业打造了便捷化的双向通道。
+(ROOT
+  (IP
+    (NP (PU “)
+      (ADJP (JJ 新))
+      (NP (NN 零售))
+      (PU ”))
+    (VP
+      (VP (VV 为)
+        (NP (NN 国际) (NN 商业)
+          (CC 和)
+          (NN 服务业)))
+      (VP (VV 打造) (AS 了)
+        (NP
+          (DNP
+            (NP (NN 便捷化))
+            (DEG 的))
+          (ADJP (JJ 双向))
+          (NP (NN 通道)))))
+    (PU 。)))

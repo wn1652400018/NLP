@@ -6,16 +6,17 @@ public class Main {
 	  public static void main(String args[]) throws IOException {
 		  CFRExtract extract=new CFRExtract();
 		  
-		  //²é¿´È«²¿ÖØĞ´¹æÔò
-		  extract.GetMap("pd-tree-0001.txt","GBK");
-		  
-    	  //¸ù¾İ²é¿´Ä³ÖÖÀàĞÍµÄ¹æÔò£¨ÒÔ×ó²àµÄ·ÇÖÕ½á·û»òÕßÖÕ½á·ûÎª²éÑ¯±äÁ¿£© 
-    	  System.out.println(extract.GetRuleList("NP"));
+		  //è¯»å–æ–‡ä»¶è·å¾—æ–‡æ³•(é‡å†™è§„åˆ™)Map
+		  extract.GetMap("pd-tree-0002(æ–°).txt","GBK");
+		 
+    	  //æ ¹æ®æ–‡æ³•å·¦ä¾§çš„å­—ç¬¦è·å–æ‰€æœ‰å¯é‡å†™çš„è§„åˆ™
+    	  System.out.println("NP: "+extract.GetRuleList("NP"));
     	  
-    	  //¸üĞÂÎÄ·¨
+    	  //æ·»åŠ /æ›´æ–°æ–‡æ³•
     	  extract.updateRule("NP","CC","NP","WP");
+    	  //extract.updateRule(st,list);
     	  
-    	  //²é¿´¹æÔò
+    	  //å±•ç¤ºè§„åˆ™
     	  extract.ShowRules();
       }
 }
